@@ -19,8 +19,9 @@ public class SimpleJDBC {
 		//create a SQL statement
 		Statement statement = connection.createStatement();
 		//execute the SQL query
-		ResultSet result = statement.executeQuery("select store_id, a.address from store as s");
-		ResultSet jresult = statement.executeQuery("join address as a on a.address_id = s.address");
+		ResultSet result = statement.executeQuery("select store_id, a.address from store as s "
+				+ "join address as a on a.address_id = s.address");
+		
 		/*		
 		System.out.println("------------------------------------------------------------------------");
 		System.out.format("|%-4s| %-25s| %-10s| %-25s| %n", "ID", "City Name", "Country", "Last Update");

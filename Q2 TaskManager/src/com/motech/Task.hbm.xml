@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 18, 2014 6:44:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="com.motech.Task" table="TASK">
+  <id name="id" type="int">
+   <column name="ID"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="title" type="java.lang.String">
+   <column name="TITLE"/>
+  </property>
+  <set lazy="true" name="notes" sort="unsorted" table="TASK">
+   <key unique="true">
+    <column name="ID"/>
+   </key>
+   <one-to-many class="com.motech.Note"/>
+  </set>
+  <property access="field" generated="never" lazy="false"
+   name="isComplete" type="boolean">
+   <column name="ISCOMPLETE"/>
+  </property>
+  <property generated="never" lazy="false" name="dateCreated" type="java.util.Date">
+   <column name="DATECREATED"/>
+  </property>
+  <property generated="never" lazy="false" name="dateCompleted" type="java.util.Date">
+   <column name="DATECOMPLETED"/>
+  </property>
+ </class>
+</hibernate-mapping>

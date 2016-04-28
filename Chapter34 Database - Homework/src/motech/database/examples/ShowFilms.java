@@ -61,7 +61,7 @@ public class ShowFilms extends JApplet {
 			Class.forName("com.mysql.jdbc.Driver");
 			// create the connection to the database.
 			connection = DriverManager.getConnection(
-					"jdbc:mysql://localhost/sakila", "application", "password");
+					"jdbc:mysql://localhost/sakila", "application", "123456");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
